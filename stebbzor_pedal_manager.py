@@ -1,4 +1,5 @@
 import json
+import re
 import os
 import threading
 import queue
@@ -32,7 +33,7 @@ except ImportError:
     Image = ImageDraw = None
 
 APP_NAME = "Stebbzor Pedal Manager"
-APP_VERSION = "1.4.0"
+APP_VERSION = "1.4.2"
 UPDATE_ASSET_NAME = "StebbzorPedalManager-Windows.zip"
 APP_DIR = Path(os.getenv("APPDATA", str(Path.home()))) / "StebbzorPedalManager"
 PROFILES_FILE = APP_DIR / "profiles.json"
@@ -46,11 +47,11 @@ def load_settings():
         data.setdefault("auto_start", False)
         data.setdefault("auto_detect", True)
         data.setdefault("minimize_to_tray", False)
-        data.setdefault("update_repo", "")
+        data.setdefault("update_repo", "ItzStebbzor/itzStebbzor-Pedal-Program")
         data.setdefault("auto_check_updates", False)
         return data
     except Exception:
-        return {"games": [], "auto_start": False, "auto_detect": True, "minimize_to_tray": False, "update_repo": "", "auto_check_updates": False}
+        return {"games": [], "auto_start": False, "auto_detect": True, "minimize_to_tray": False, "update_repo": "ItzStebbzor/itzStebbzor-Pedal-Program", "auto_check_updates": False}
 
 def save_settings(settings):
     APP_DIR.mkdir(parents=True, exist_ok=True)

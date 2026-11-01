@@ -1,6 +1,6 @@
 @echo off
 setlocal
-title Build Stebbzor Pedal Manager v1.4
+title Build Stebbzor Pedal Manager v1.4.2
 cd /d "%~dp0"
 echo Installing required build dependencies...
 py -m pip install -r requirements.txt pyinstaller
