@@ -1,0 +1,5 @@
+{
+  "version": "v1.4.4",
+  "asset": "StebbzorPedalManager-Windows.zip",
+  "notes": "Fixes GitHub update checks by using a lightweight version manifest instead of the rate-limited Releases API."
+}
